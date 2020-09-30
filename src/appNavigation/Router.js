@@ -11,7 +11,8 @@ import LoginScreen from '../screens/Home/LoginScreen';
 import ProfileScreen from '../screens/Home/ProfileScreen';
 import WishlistScreen from '../screens/Home/WishListScreen';
 import CartScreen from '../screens/Home/CartScreen';
-import ProductScreen from '../screens/Home/ProductScreen';
+import ProductScreen from '../screens/Products/ProductScreen';
+import DetailScreen from '../screens/Products/Detail';
 
 const Tab = createBottomTabNavigator();
 const RootStack = createStackNavigator();
@@ -23,6 +24,7 @@ function HomeStackScreen() {
     <HomeStack.Navigator initialRouteName="Home">
       <HomeStack.Screen name="Home" component={HomeScreen} />
       <HomeStack.Screen name="Product" component={ProductScreen} />
+      <HomeStack.Screen name="Detail" component={DetailScreen} />
     </HomeStack.Navigator>
   );
 }

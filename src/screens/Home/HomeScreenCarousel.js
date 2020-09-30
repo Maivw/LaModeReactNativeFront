@@ -33,13 +33,10 @@ const ENTRIES1 = [
 ];
 const {width: screenWidth} = Dimensions.get('window');
 
-const HomeScreenCarousel = (props) => {
+const HomeScreenCarousel = ({navigation}) => {
+  const onMoveProduct = () => navigation.navigate('Product');
   const [entries, setEntries] = useState([]);
   const carouselRef = useRef(null);
-
-  const goForward = () => {
-    carouselRef.current.snapToNext();
-  };
 
   useEffect(() => {
     setEntries(ENTRIES1);
@@ -72,7 +69,7 @@ const HomeScreenCarousel = (props) => {
           renderItem={renderItem}
           hasParallaxImages={true}
         />
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onMoveProduct}>
           <Text style={styles.text}>Coming soon</Text>
         </TouchableOpacity>
         <TouchableOpacity>

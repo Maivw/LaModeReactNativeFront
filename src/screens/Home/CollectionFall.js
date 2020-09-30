@@ -43,6 +43,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontSize: 30,
     textAlign: 'center',
+    zIndex: 200,
+  },
+  image: {
+    width: '100%',
+    height: '100%',
+    top: 0,
+    left: 0,
+    position: 'absolute',
+    resizeMode: 'contain',
   },
 });
 
@@ -50,7 +59,7 @@ function Collection() {
   return (
     <TouchableOpacity style={styles.wrapper}>
       <Image
-        style={{flex: 1, height: '100%', width: '100%'}}
+        style={styles.image}
         resizeMode="cover"
         source={{
           uri:
@@ -58,7 +67,7 @@ function Collection() {
         }}
       />
       <Image
-        style={{flex: 1, height: '100%', width: '100%'}}
+        style={styles.image}
         resizeMode="cover"
         source={{
           uri:
@@ -66,7 +75,7 @@ function Collection() {
         }}
       />
       <Image
-        style={{flex: 1, height: '100%', width: '100%'}}
+        style={styles.image}
         resizeMode="cover"
         source={{
           uri:
@@ -74,7 +83,7 @@ function Collection() {
         }}
       />
       <Image
-        style={{flex: 1, height: '100%', width: '100%'}}
+        style={styles.image}
         resizeMode="cover"
         source={{
           uri:
@@ -82,7 +91,7 @@ function Collection() {
         }}
       />
       <Image
-        style={{flex: 1, height: '100%', width: '100%'}}
+        style={styles.image}
         resizeMode="cover"
         source={{
           uri:
@@ -90,7 +99,7 @@ function Collection() {
         }}
       />
       <Image
-        style={{flex: 1, height: '100%', width: '100%'}}
+        style={styles.image}
         resizeMode="cover"
         source={{
           uri:
@@ -98,7 +107,7 @@ function Collection() {
         }}
       />
       <Image
-        style={{flex: 1, height: '100%', width: '100%'}}
+        style={styles.image}
         resizeMode="cover"
         source={{
           uri:
@@ -106,7 +115,7 @@ function Collection() {
         }}
       />
       <Image
-        style={{flex: 1, height: '100%', width: '100%'}}
+        style={styles.image}
         resizeMode="cover"
         source={{
           uri:
