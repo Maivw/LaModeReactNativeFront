@@ -8,10 +8,12 @@ import {
   TouchableOpacity,
   Platform,
   ScrollView,
+  Button,
 } from 'react-native';
-import {Images} from '../../themes';
+import {Images, Colors} from '../../themes';
 import Collection from './CollectionFall';
 import Header from '../Header';
+import Color from 'color';
 
 const ENTRIES1 = [
   {
@@ -46,10 +48,11 @@ const HomeScreenCarousel = ({navigation}) => {
     return (
       <View style={styles.item}>
         <ParallaxImage
+          fadeDuration={500}
+          parallaxFactor={0.2}
           source={{uri: item.illustration}}
           containerStyle={styles.imageContainer}
           style={styles.image}
-          parallaxFactor={0.4}
           {...parallaxProps}
         />
       </View>
@@ -59,8 +62,22 @@ const HomeScreenCarousel = ({navigation}) => {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scrollView}>
+        <TouchableOpacity
+          style={{
+            backgroundColor: Colors.black,
+            color: Color.white,
+            height: 40,
+            width: 120,
+            borderRadius: 5,
+            top: '30%',
+            alignSelf: 'center',
+            zIndex: 500,
+          }}>
+          <Button color="#fff" title="SHOP NOW" onPress={onMoveProduct} />
+        </TouchableOpacity>
         <Header />
         <Carousel
+          layout={'default'}
           ref={carouselRef}
           sliderWidth={screenWidth}
           sliderHeight={screenWidth}
@@ -68,8 +85,9 @@ const HomeScreenCarousel = ({navigation}) => {
           data={entries}
           renderItem={renderItem}
           hasParallaxImages={true}
+          enableSnap={true}
         />
-        <TouchableOpacity onPress={onMoveProduct}>
+        <TouchableOpacity>
           <Text style={styles.text}>Coming soon</Text>
         </TouchableOpacity>
         <TouchableOpacity>
@@ -94,7 +112,8 @@ const styles = StyleSheet.create({
     flex: 1,
     marginBottom: Platform.select({ios: 0, android: 1}),
     backgroundColor: 'white',
-    borderRadius: 8,
+    borderRadius: 5,
+    width: '100%',
   },
   image: {
     ...StyleSheet.absoluteFillObject,
@@ -106,5 +125,13 @@ const styles = StyleSheet.create({
   text: {
     backgroundColor: 'black',
     color: 'white',
+  },
+  button: {
+    height: 40,
+    width: 120,
+    borderRadius: 5,
+    top: '30%',
+    alignSelf: 'center',
+    zIndex: 500,
   },
 });
